@@ -6,19 +6,6 @@ import static vetores.VetoresConst.vetor3;
 
 public class RemoverDuplicadosVetores {
 
-	private static void ordena(Integer[] vetor) {
-		int aux = -1;
-		for (int i = 0; i < vetor.length; i++) {
-			for (int j = 0; j < vetor.length; j++) {
-				if (vetor[i] <= vetor[j]) {
-					aux = vetor[i];
-					vetor[i] = vetor[j];
-					vetor[j] = aux;
-				}
-			}
-		}
-	}
-
 	public static void main(String[] args) {
 
 		Integer vetorTemp[] = new Integer[vetor1.length + vetor2.length + vetor3.length];
@@ -49,7 +36,25 @@ public class RemoverDuplicadosVetores {
 		}
 	}
 
-	private static Integer[] duplicados(Integer[] vetor) {
+  private static void ordena(Integer[] vetor)
+  {
+    int aux = -1;
+    for (int i = 0; i < vetor.length; i++)
+    {
+      for (int j = 0; j < vetor.length; j++)
+      {
+        if (vetor[i] <= vetor[j])
+        {
+          aux = vetor[i];
+          vetor[i] = vetor[j];
+          vetor[j] = aux;
+        }
+      }
+    }
+  }
+
+  private static Integer[] duplicados(Integer[] vetor)
+  {
 		Integer[] repete = new Integer[vetor.length];
 
 		for (int i = 0; i < vetor.length; i++) {
